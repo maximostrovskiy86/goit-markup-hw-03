@@ -3,6 +3,7 @@
     --primyry-text-color: #212121;
     --text-color: #757575;
     --white-color: #fff;
+    --work-list-item-gap: 30px;
 }
 
 *,
@@ -151,6 +152,7 @@ h2 {
 .benefits h2 {
     text-indent: -9999px;
 }
+
 .benefits .benefits-list {
     display: flex;
     justify-content: space-between;
@@ -196,8 +198,8 @@ h2 {
     text-align: center;
     background-color: var(--white-color);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-                0 1px 1px rgba(0, 0, 0, 0.14),
-                0 2px 1px rgba(0, 0, 0, 0.2);
+    0 1px 1px rgba(0, 0, 0, 0.14),
+    0 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 4px 4px;
 }
 
@@ -233,14 +235,25 @@ h2 {
 /*Portfolio*/
 .filters {
     display: flex;
+    justify-content: center;
+    margin-bottom: 34px;
 }
 
-.filters > .item {
-
+.filters > .item + .item {
+    margin-left: 8px;
 }
 
 .works-list {
     display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--work-list-item-gap));
+    margin-left: calc(-1 * var(--work-list-item-gap));
+}
+
+.works-list > .item {
+    flex-basis: calc(100% / 3 - 30px);
+    margin-top: var(--work-list-item-gap);
+    margin-left: var(--work-list-item-gap);
 }
 
 .portfolio h1 {
@@ -271,8 +284,25 @@ h2 {
 .portfolio .filters .btn:focus {
     background: var(--accent-color);
     color: var(--white-color);
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 1px 1px 1px #000;
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 2px 2px rgba(0, 0, 0, 0.12);
     transition: all 0.2s ease-in;
+}
+
+.works-list .item {
+    /*margin: -1px;*/
+}
+
+.works-list .item .card-thumb {
+    display: block;
+}
+
+.works-list .card-item {
+    padding: 20px 24px;
+    border-right: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
+    border-left: 1px solid #EEE;
 }
 
 .portfolio .work-title {
@@ -285,15 +315,15 @@ h2 {
 }
 
 .portfolio .work-text {
+    margin-top: 4px;
     font-size: 16px;
+    line-height: 1.88;
     letter-spacing: 0.03em;
     color: var(--text-color);
 }
 
-.portfolio .work-title:hover,
-.portfolio .work-title:focus,
-.portfolio .work-text:hover,
-.portfolio .work-text:focus {
+.works-list > .item:hover .work-title,
+.works-list > .item:focus .work-title {
     color: var(--accent-color);
     transition: color 0.2s ease-in;
 }

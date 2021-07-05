@@ -121,11 +121,18 @@ ul.nav a:focus,
 }
 
 .home .banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 200px;
+    padding-bottom: 200px;
     text-align: center;
     background: #2F303A;
 }
 
 .home h1 {
+    max-width: 660px;
+    margin-bottom: 30px;
     font-weight: 900;
     font-size: 44px;
     line-height: 1.41;
@@ -232,11 +239,15 @@ h2 {
     cursor: pointer;
 }
 
+.home .button:hover {
+    background-color: #188CE8;
+}
+
 /*Portfolio*/
 .filters {
     display: flex;
     justify-content: center;
-    margin-bottom: 34px;
+    margin-bottom: 50px;
 }
 
 .filters > .item + .item {
@@ -350,18 +361,17 @@ h2 {
     margin-top: 9px;
 }
 
-.footer .contact li + li,
-.footer .contact {
+.footer .footer-list li + li {
     margin-top: 9px;
 }
 
-.footer .contact a {
+.footer-list li + li a {
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.6);
 }
 
-.footer .contact a:hover,
-.footer .contact a:focus {
+.footer-list li + li a:hover,
+.footer-list li + li a:focus {
     color: var(--white-color);
     transition: color 0.2s ease-in;
 }
